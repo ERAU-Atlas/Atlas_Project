@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 4000 3000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect id="Artboard1" x="0" y="0" width="4000" height="3000" style="fill:none;"/>
+    <g id="Artboard11" serif:id="Artboard1">
+        <g transform="matrix(1,0,0,1,376.13,15.5039)">
+            <text x="1211.63px" y="583.527px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:208.333px;">Flywheel</text>
+        </g>
+        <g transform="matrix(1.45863,0,0,1.45863,-715.707,-752.044)">
+            <circle cx="1861.82" cy="1725.97" r="409.884" style="fill:rgb(235,235,235);stroke:black;stroke-width:22.85px;"/>
+        </g>
+        <g transform="matrix(0.153664,0,0,0.153664,1713.9,1500.28)">
+            <circle cx="1861.82" cy="1725.97" r="409.884" style="fill:rgb(235,235,235);stroke:black;stroke-width:108.46px;"/>
+        </g>
+        <g transform="matrix(2.40313,0,0,2.40313,-3571.34,-1712.17)">
+            <g transform="matrix(0.416123,-0,-0,0.416123,1486.12,712.475)">
+                <path d="M1962.5,1094.19L2150,1000.44L1962.5,906.686L1962.5,1094.19Z"/>
+                <path d="M2000,1000.44C1577.47,1000.44 1234.93,1342.97 1234.93,1765.5C1234.93,1963.59 1310.38,2144.2 1434.08,2280.13" style="fill:none;stroke:black;stroke-width:25px;"/>
+            </g>
+        </g>
+        <g transform="matrix(-2.40313,0,0,-2.40313,7571.3,5256.3)">
+            <g transform="matrix(-0.416123,-0,-0,-0.416123,3150.59,2187.27)">
+                <path d="M2037.47,2449.95L1849.97,2543.7L2037.47,2637.45L2037.47,2449.95Z"/>
+                <path d="M1999.97,2543.7C2422.5,2543.7 2765.03,2201.16 2765.03,1778.63C2765.03,1580.54 2689.59,1399.93 2565.89,1264" style="fill:none;stroke:black;stroke-width:25px;"/>
+            </g>
+        </g>
+    </g>
+</svg>

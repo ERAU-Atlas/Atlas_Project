@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 4000 3000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <rect id="Artboard1" x="0" y="0" width="4000" height="3000" style="fill:none;"/>
+    <g id="Artboard11" serif:id="Artboard1">
+        <g transform="matrix(1,0,0,1,0,256.662)">
+            <g transform="matrix(1.07008,0,0,1.07008,-874.802,1109.53)">
+                <circle cx="2032.38" cy="1019.06" r="280.354" style="fill:rgb(231,232,233);stroke:rgb(35,31,32);stroke-width:15.58px;"/>
+            </g>
+            <g transform="matrix(1.07008,0,0,1.07008,-174.802,-290.467)">
+                <circle cx="2032.38" cy="1019.06" r="280.354" style="fill:rgb(231,232,233);stroke:rgb(35,31,32);stroke-width:15.58px;"/>
+            </g>
+            <g transform="matrix(1.07008,0,0,1.07008,525.198,1109.53)">
+                <circle cx="2032.38" cy="1019.06" r="280.354" style="fill:rgb(231,232,233);stroke:rgb(35,31,32);stroke-width:15.58px;"/>
+            </g>
+            <g transform="matrix(0.875,0,0,1.24853,250,-275.122)">
+                <path d="M2800,1982.43L2000,861.109L1200,1982.43L2800,1982.43Z" style="fill:none;stroke:rgb(35,31,32);stroke-width:15.46px;"/>
+            </g>
+        </g>
+        <g transform="matrix(4.10447,0,0,4.10447,-1671.16,-926.006)">
+            <text x="737.224px" y="348.063px" style="font-family:'ArialMT', 'Arial', sans-serif;font-size:50.758px;fill:rgb(35,31,32);">T<tspan x="766.345px 783.248px " y="348.063px 348.063px ">ri</tspan>-star Wheel</text>
+        </g>
+    </g>
+</svg>
