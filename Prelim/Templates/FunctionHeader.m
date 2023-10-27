@@ -27,7 +27,7 @@ function [output] = functionName(input01, input02)
 %
 % Author: [ Author(s) Name ]
 % Email: [ Email ]
-% Maintainre: [ Maintainer Name ]
+% Maintainer: [ Maintainer Name ]
 % Maintainer Email: [ Email ]
 % Created: createdDate
 % Revised: revisedDate
