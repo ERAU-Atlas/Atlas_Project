@@ -106,61 +106,79 @@ dot_gamma = b(18:36);
 % joint positions
 r_I_I_r_F = zeros(3,1);
 
-r_F_F_r_A1 = zeros(3,1);
-r_A1_A1_r_A2 = zeros(3,1);
-r_A2_A2_r_A3 = zeros(3,1);
+r_F_F_r_A1 = [0.22966150; 0.06751003; -0.05715000];
+r_A1_A1_r_A2 = [0.00000000; -0.02900997; -0.10160000];
+r_A2_A2_r_A3 = [-0.00008990; -0.02451970; -0.10218470];
 
-r_F_F_r_B1 = zeros(3,1);
-r_B1_B1_r_B2 = zeros(3,1);
-r_B2_B2_r_B3 = zeros(3,1);
+r_F_F_r_B1 = [0.22966150; -0.06751003; -0.05715000];
+r_B1_B1_r_B2 = r_A1_A1_r_A2;
+r_B2_B2_r_B3 = r_A2_A2_r_A3;
 
-r_F_F_r_C1 = zeros(3,1);
-r_C1_C1_r_C2 = zeros(3,1);
-r_C2_C2_r_C3 = zeros(3,1);
+r_F_F_r_C1 = [-0.23388850; 0.06751003; -0.05715000];
+r_C1_C1_r_C2 = r_A1_A1_r_A2;
+r_C2_C2_r_C3 = r_A2_A2_r_A3;
 
-r_F_F_r_D1 = zeros(3,1);
-r_D1_D1_r_D2 = zeros(3,1);
-r_D2_D2_r_D3 = zeros(3,1);
+r_F_F_r_D1 = [-0.23388850; -0.06751003; -0.05715000];
+r_D1_D1_r_D2 = r_A1_A1_r_A2;
+r_D2_D2_r_D3 = r_A2_A2_r_A3;
 
 
 % mass parameters
-m_F
+m_F = 1; % (kg) [[PLACEHOLDER]]
 
-m_A1
-m_A2
-m_A3
+m_A1 = 1; % (kg) [[PLACEHOLDER]]
+m_A2 = 0.06376713; % (kg)
+m_A3 = 0.07942277; % (kg)
 
-m_B1
-m_B2
-m_B3
+m_B1 = 1; % (kg) [[PLACEHOLDER]]
+m_B2 = 1; % (kg) [[PLACEHOLDER]]
+m_B3 = 1; % (kg) [[PLACEHOLDER]]
 
-m_C1
-m_C2
-m_C3
+m_C1 = 1; % (kg) [[PLACEHOLDER]]
+m_C2 = 1; % (kg) [[PLACEHOLDER]]
+m_C3 = 1; % (kg) [[PLACEHOLDER]]
 
-m_D1
-m_D2
-m_D3
+m_D1 = 1; % (kg) [[PLACEHOLDER]]
+m_D2 = 1; % (kg) [[PLACEHOLDER]]
+m_D3 = 1; % (kg) [[PLACEHOLDER]]
+
+% Vectors of first mass moments
+G_FFG = []*m_F;
+G_A1_A1_G = [0; 0.00000000; -0.04981626]*m_A1;
+G_A2_A2_G = [0; 0.00007322; -0.04155466]*m_A2;
+G_A3_A3_G = [0; 0; 0]*m_A3;
+G_B1_B1_G = [0; 0; -0.04981626]*m_B1;
+G_B2_B2_G = []*m_B2;
+G_B3_B3_G = []*m_B3;
+G_C1_C1_G = [0; 0; -0.04981626]*m_C1;
+G_C2_C2_G = []*m_C2;
+G_C3_C3_G = []*m_C3;
+G_D1_D1_G = [0; 0; -0.04981626]*m_D1;
+G_D2_D2_G = []*m_D2;
+G_D3_D3_G = []*m_D3;
+
+
+
 
 
 % Moments of inertia (negative tensor form)
 J_FFJ
 
-J_A1_A1_J
-J_A2_A2_J
-J_A3_A3_J
+J_A1_A1_J = [0.00028248, 0, 0; 0, 0.00028256,  0.00000000; 0,           0, 0.00000809];
+J_A2_A2_J = [0.00017294, 0, 0; 0, 0.00017138, -0.00000074; 0, -0.00000074, 0.00000892];
+J_A3_A3_J = [0.00003211, 0, 0; 0, 0.00005967,           0; 0,           0, 0.00003211];
 
-J_B1_B1_J
-J_B2_B2_J
-J_B3_B3_J
+J_B1_B1_J = J_A1_A1_J;
+J_B2_B2_J = J_A2_A2_J;
+J_B3_B3_J = J_A3_A3_J;
 
-J_C1_C1_J
-J_C2_C2_J
-J_C3_C3_J
+J_C1_C1_J = J_A1_A1_J;
+J_C2_C2_J = J_A2_A2_J;
+J_C3_C3_J = J_A3_A3_J;
 
-J_D1_D1_J
-J_D2_D2_J
-J_D3_D3_J
+J_D1_D1_J = J_A1_A1_J;
+J_D2_D2_J = J_A2_A2_J;
+J_D3_D3_J = J_A3_A3_J;
 
 
 
