@@ -100,7 +100,7 @@ dot_theta_D3 = b(36);
 
 
 gamma = b(1:18);
-dot_gamma = b(18:36);
+dot_gamma = b(19:36);
 
 
 % joint positions
@@ -143,26 +143,26 @@ m_D2 = 1; % (kg) [[PLACEHOLDER]]
 m_D3 = 1; % (kg) [[PLACEHOLDER]]
 
 % Vectors of first mass moments
-G_FFG = []*m_F;
-G_A1_A1_G = [0; 0.00000000; -0.04981626]*m_A1;
+G_FFG = [0.00108599; 0.00633274; 0.00000000]*m_F;
+G_A1_A1_G = [0;          0; -0.04981626]*m_A1;
 G_A2_A2_G = [0; 0.00007322; -0.04155466]*m_A2;
-G_A3_A3_G = [0; 0; 0]*m_A3;
-G_B1_B1_G = [0; 0; -0.04981626]*m_B1;
-G_B2_B2_G = []*m_B2;
-G_B3_B3_G = []*m_B3;
-G_C1_C1_G = [0; 0; -0.04981626]*m_C1;
-G_C2_C2_G = []*m_C2;
-G_C3_C3_G = []*m_C3;
-G_D1_D1_G = [0; 0; -0.04981626]*m_D1;
-G_D2_D2_G = []*m_D2;
-G_D3_D3_G = []*m_D3;
+G_A3_A3_G = [0;          0;           0]*m_A3;
+G_B1_B1_G = [0;          0; -0.04981626]*m_B1;
+G_B2_B2_G = [0; 0.00007322; -0.04155466]*m_B2;
+G_B3_B3_G = [0;          0;           0]*m_B3;
+G_C1_C1_G = [0;          0; -0.04981626]*m_C1;
+G_C2_C2_G = [0; 0.00007322; -0.04155466]*m_C2;
+G_C3_C3_G = [0;          0;           0]*m_C3;
+G_D1_D1_G = [0;          0; -0.04981626]*m_D1;
+G_D2_D2_G = [0; 0.00007322; -0.04155466]*m_D2;
+G_D3_D3_G = [0;          0;           0]*m_D3;
 
 
 
 
 
 % Moments of inertia (negative tensor form)
-J_FFJ
+J_FFJ = [0.00694531, -0.00001856, 0.00000000; -0.00001856, 0.05145632, 0.00000000; 0.00000000, 0.00000000, 0.04468142];
 
 J_A1_A1_J = [0.00028248, 0, 0; 0, 0.00028256,  0.00000000; 0,           0, 0.00000809];
 J_A2_A2_J = [0.00017294, 0, 0; 0, 0.00017138, -0.00000074; 0, -0.00000074, 0.00000892];
@@ -185,8 +185,8 @@ J_D3_D3_J = J_A3_A3_J;
 % jacobian for Frame frame
 xyz_KDE = [cos(phi)*cos(theta), sin(phi), 0; -cos(theta)*sin(phi), cos(phi), 0; sin(theta), 0, 1];
 
-Jac_F = [zeros(3, 3),     xyz_KDE, zeros(3, 8);...
-           eye(3, 3), zeros(3, 3), zeros(3, 8)];
+Jac_F = [zeros(3, 3),     xyz_KDE, zeros(3, 12);...
+           eye(3, 3), zeros(3, 3), zeros(3, 12)];
     
 
 dot_Jac_F = zeros(6, size(b, 1)/2);
@@ -217,7 +217,22 @@ I_hat_D3 = zeros(3, size(b, 1)/2);
 
 
 % I_hat_F is unused
-error("defined by geometry")
+I_hat_A1(2, 7) = 1;
+I_hat_A2(2, 8) = 1;
+I_hat_A3(2, 9) = 1;
+
+I_hat_B1(2, 10) = 1;
+I_hat_B2(2, 11) = 1;
+I_hat_B3(2, 12) = 1;
+
+I_hat_C1(2, 13) = 1;
+I_hat_C2(2, 14) = 1;
+I_hat_C3(2, 15) = 1;
+
+I_hat_D1(2, 16) = 1;
+I_hat_D2(2, 17) = 1;
+I_hat_D3(2, 18) = 1;
+
 
 
 % set up I_tilde matricies (mapping of linear velocity for translational
@@ -263,12 +278,9 @@ T_D2_T_D3 = roty(theta_D3);
 %% Recursive FK
 
 w_FFwI = [dot_phi; dot_theta; dot_psi];
-
-[T_ITF, w_FFwI, Jac_F, dot_Jac_F] = RecursiveFK(T_ITF, T_F_T_A1, Jac_F(1:3, :)*dot_gamma, Jac_F, dot_Jac_F, r_F_F_r_A1, I_hat_A1, I_tilde_A1, dot_gamma);
-
 [T_ITA1, w_A1_A1_w_I, Jac_A1, dot_Jac_A1] = RecursiveFK(T_ITF,  T_F_T_A1,  Jac_F(1:3, :)*dot_gamma, Jac_F,  dot_Jac_F,  r_F_F_r_A1,   I_hat_A1, I_tilde_A1, dot_gamma);
-[T_ITA2, w_A2_A2_w_I, Jac_A2, dot_Jac_A2] = RecursiveFK(T_ITA1, T_A1_T_A2, Jac_F(1:3, :)*dot_gamma, Jac_A1, dot_Jac_A2, r_A1_A1_r_A2, I_hat_A2, I_tilde_A2, dot_gamma);
-[T_ITA3, w_A2_A2_w_I, Jac_A3, dot_Jac_A3] = RecursiveFK(T_ITA2, T_A2_T_A3, Jac_F(1:3, :)*dot_gamma, Jac_A2, dot_Jac_A2, r_A2_A2_r_A3, I_hat_A3, I_tilde_A3, dot_gamma);
+[T_ITA2, w_A2_A2_w_I, Jac_A2, dot_Jac_A2] = RecursiveFK(T_ITA1, T_A1_T_A2, Jac_F(1:3, :)*dot_gamma, Jac_A1, dot_Jac_A1, r_A1_A1_r_A2, I_hat_A2, I_tilde_A2, dot_gamma);
+[T_ITA3, w_A3_A3_w_I, Jac_A3, dot_Jac_A3] = RecursiveFK(T_ITA2, T_A2_T_A3, Jac_F(1:3, :)*dot_gamma, Jac_A2, dot_Jac_A2, r_A2_A2_r_A3, I_hat_A3, I_tilde_A3, dot_gamma);
 
 [T_ITB1, w_B1_B1_w_I, Jac_B1, dot_Jac_B1] = RecursiveFK(T_ITF,  T_F_T_B1,  Jac_F(1:3, :)*dot_gamma, Jac_F,  dot_Jac_F,  r_F_F_r_B1,   I_hat_B1, I_tilde_B1, dot_gamma);
 [T_ITB2, w_B2_B2_w_I, Jac_B2, dot_Jac_B2] = RecursiveFK(T_ITB1, T_B1_T_B2, Jac_F(1:3, :)*dot_gamma, Jac_B1, dot_Jac_B1, r_B1_B1_r_B2, I_hat_B2, I_tilde_B2, dot_gamma);
@@ -299,7 +311,7 @@ H =  Jac_F' * [    J_FFJ,      skew(G_FFG)*T_ITF';      -T_ITF*skew(G_FFG),  m_F
     Jac_D3' * [J_D3_D3_J, skew(G_D3_D3_G)*T_ITD3'; -T_ITD3*skew(G_D3_D3_G), m_D3*eye(3)] * Jac_D3;
 
 
-d = Jac_F' * [J_FFJ, skew(G_FFG)*T_ITF'; -T_ITF*skew(G_FFG), m_C*eye(3)] * dot_Jac_C*dot_gamma + Jac_C'*[cross(w_CCwI, J_FFJ*w_CCwI); T_ITF*cross(w_CCwI, cross(w_CCwI, G_FFG))] +...
+d = Jac_F' * [J_FFJ, skew(G_FFG)*T_ITF'; -T_ITF*skew(G_FFG), m_F*eye(3)] * dot_Jac_F*dot_gamma + Jac_F'*[cross(w_FFwI, J_FFJ*w_FFwI); T_ITF*cross(w_FFwI, cross(w_FFwI, G_FFG))] +...
     Jac_A1' * [J_A1_A1_J, skew(G_A1_A1_G)*T_ITA1'; -T_ITA1*skew(G_A1_A1_G), m_A1*eye(3)] * dot_Jac_A1*dot_gamma + Jac_A1'*[cross(w_A1_A1_w_I, J_A1_A1_J*w_A1_A1_w_I); T_ITA1*cross(w_A1_A1_w_I, cross(w_A1_A1_w_I, G_A1_A1_G))] +...
     Jac_A2' * [J_A2_A2_J, skew(G_A2_A2_G)*T_ITA2'; -T_ITA2*skew(G_A2_A2_G), m_A2*eye(3)] * dot_Jac_A2*dot_gamma + Jac_A2'*[cross(w_A2_A2_w_I, J_A2_A2_J*w_A2_A2_w_I); T_ITA2*cross(w_A2_A2_w_I, cross(w_A2_A2_w_I, G_A2_A2_G))] +...
     Jac_A3' * [J_A3_A3_J, skew(G_A3_A3_G)*T_ITA3'; -T_ITA3*skew(G_A3_A3_G), m_A3*eye(3)] * dot_Jac_A3*dot_gamma + Jac_A3'*[cross(w_A3_A3_w_I, J_A3_A3_J*w_A3_A3_w_I); T_ITA3*cross(w_A3_A3_w_I, cross(w_A3_A3_w_I, G_A3_A3_G))] +...
@@ -343,11 +355,6 @@ ddot_gamma = H \ (F - d + G - B*dot_gamma - C*sign(dot_gamma));
 % 14x14 \ (14x1 - 14x1 + 14x1 - 14x14*14x1 - 14x14*14x1
 
 dot_b = [dot_gamma; ddot_gamma];
-
-
-
-
-
 
 
 

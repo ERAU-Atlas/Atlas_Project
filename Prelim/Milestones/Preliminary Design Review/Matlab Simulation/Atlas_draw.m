@@ -61,40 +61,40 @@ if frameNum < 2
 
     % Read in STL data for all joints
     [dat.JF.verts, dat.JF.faces, dat.JF.n, dat.JF.c, dat.JF.stltitle] = stlread("Atlas_Frame.STL");
-    [dat.JA1.verts, dat.JA1.faces, dat.JA1.n, dat.JA1.c, dat.JA1.stltitle] = stlread("Atlas_LegA_L1.STL");
-    [dat.JA2.verts, dat.JA2.faces, dat.JA2.n, dat.JA2.c, dat.JA2.stltitle] = stlread("Atlas_LegA_L2.STL");
-    [dat.JA3.verts, dat.JA3.faces, dat.JA3.n, dat.JA3.c, dat.JA3.stltitle] = stlread("Atlas_LegA_L3.STL");
-    [dat.JB1.verts, dat.JB1.faces, dat.JB1.n, dat.JB1.c, dat.JB1.stltitle] = stlread("Atlas_LegB_L1.STL");
-    [dat.JB2.verts, dat.JB2.faces, dat.JB2.n, dat.JB2.c, dat.JB2.stltitle] = stlread("Atlas_LegB_L2.STL");
-    [dat.JB3.verts, dat.JB3.faces, dat.JB3.n, dat.JB3.c, dat.JB3.stltitle] = stlread("Atlas_LegB_L3.STL");
-    [dat.JC1.verts, dat.JC1.faces, dat.JC1.n, dat.JC1.c, dat.JC1.stltitle] = stlread("Atlas_LegC_L1.STL");
-    [dat.JC2.verts, dat.JC2.faces, dat.JC2.n, dat.JC2.c, dat.JC2.stltitle] = stlread("Atlas_LegC_L2.STL");
-    [dat.JC3.verts, dat.JC3.faces, dat.JC3.n, dat.JC3.c, dat.JC3.stltitle] = stlread("Atlas_LegC_L3.STL");
-    [dat.JD1.verts, dat.JD1.faces, dat.JD1.n, dat.JD1.c, dat.JD1.stltitle] = stlread("Atlas_LegD_L1.STL");
-    [dat.JD2.verts, dat.JD2.faces, dat.JD2.n, dat.JD2.c, dat.JD2.stltitle] = stlread("Atlas_LegD_L2.STL");
-    [dat.JD3.verts, dat.JD3.faces, dat.JD3.n, dat.JD3.c, dat.JD3.stltitle] = stlread("Atlas_LegD_L3.STL");
+    [dat.JA1.verts, dat.JA1.faces, dat.JA1.n, dat.JA1.c, dat.JA1.stltitle] = stlread("Atlas_Leg_1.STL");
+    [dat.JA2.verts, dat.JA2.faces, dat.JA2.n, dat.JA2.c, dat.JA2.stltitle] = stlread("Atlas_Leg_2.STL");
+    [dat.JA3.verts, dat.JA3.faces, dat.JA3.n, dat.JA3.c, dat.JA3.stltitle] = stlread("2337T41_Rubber Wheel.STL");
+    [dat.JB1.verts, dat.JB1.faces, dat.JB1.n, dat.JB1.c, dat.JB1.stltitle] = stlread("Atlas_Leg_1.STL");
+    [dat.JB2.verts, dat.JB2.faces, dat.JB2.n, dat.JB2.c, dat.JB2.stltitle] = stlread("Atlas_Leg_2.STL");
+    [dat.JB3.verts, dat.JB3.faces, dat.JB3.n, dat.JB3.c, dat.JB3.stltitle] = stlread("2337T41_Rubber Wheel.STL");
+    [dat.JC1.verts, dat.JC1.faces, dat.JC1.n, dat.JC1.c, dat.JC1.stltitle] = stlread("Atlas_Leg_1.STL");
+    [dat.JC2.verts, dat.JC2.faces, dat.JC2.n, dat.JC2.c, dat.JC2.stltitle] = stlread("Atlas_Leg_2.STL");
+    [dat.JC3.verts, dat.JC3.faces, dat.JC3.n, dat.JC3.c, dat.JC3.stltitle] = stlread("2337T41_Rubber Wheel.STL");
+    [dat.JD1.verts, dat.JD1.faces, dat.JD1.n, dat.JD1.c, dat.JD1.stltitle] = stlread("Atlas_Leg_1.STL");
+    [dat.JD2.verts, dat.JD2.faces, dat.JD2.n, dat.JD2.c, dat.JD2.stltitle] = stlread("Atlas_Leg_2.STL");
+    [dat.JD3.verts, dat.JD3.faces, dat.JD3.n, dat.JD3.c, dat.JD3.stltitle] = stlread("2337T41_Rubber Wheel.STL");
 end
 
 
 
 % joint positions
-r_I_I_r_F = zeros(3,1);
+r_IIrF = zeros(3,1);
 
-r_F_F_r_A1 = zeros(3,1);
-r_A1_A1_r_A2 = zeros(3,1);
-r_A2_A2_r_A3 = zeros(3,1);
+r_F_F_r_A1 = [0.22966150; 0.06751003; -0.05715000];
+r_A1_A1_r_A2 = [0.00000000; -0.02900997; -0.10160000];
+r_A2_A2_r_A3 = [-0.00008990; -0.02451970; -0.10218470];
 
-r_F_F_r_B1 = zeros(3,1);
-r_B1_B1_r_B2 = zeros(3,1);
-r_B2_B2_r_B3 = zeros(3,1);
+r_F_F_r_B1 = [0.22966150; -0.06751003; -0.05715000];
+r_B1_B1_r_B2 = r_A1_A1_r_A2;
+r_B2_B2_r_B3 = r_A2_A2_r_A3;
 
-r_F_F_r_C1 = zeros(3,1);
-r_C1_C1_r_C2 = zeros(3,1);
-r_C2_C2_r_C3 = zeros(3,1);
+r_F_F_r_C1 = [-0.23388850; 0.06751003; -0.05715000];
+r_C1_C1_r_C2 = r_A1_A1_r_A2;
+r_C2_C2_r_C3 = r_A2_A2_r_A3;
 
-r_F_F_r_D1 = zeros(3,1);
-r_D1_D1_r_D2 = zeros(3,1);
-r_D2_D2_r_D3 = zeros(3,1);
+r_F_F_r_D1 = [-0.23388850; -0.06751003; -0.05715000];
+r_D1_D1_r_D2 = r_A1_A1_r_A2;
+r_D2_D2_r_D3 = r_A2_A2_r_A3;
 
 
 
@@ -125,7 +125,7 @@ theta_D3 = gamma(18);
 
 
 
-T_ITF = rotx(phi)*roty(theta)*rotz(psi)
+T_ITF = rotx(phi)*roty(theta)*rotz(psi);
 
 T_FTA1 = roty(theta_A1);
 T_A1_T_A2 = roty(theta_A2);
@@ -164,38 +164,38 @@ T_ITD3 = T_ITD2 * T_D1_T_D2;
 
 
 % Transform Position vectors into I frame
-r_IIrA1 = r_IIrF + (T_ITF * r_FFrA1);
+r_IIrA1 = r_IIrF + (T_ITF * r_F_F_r_A1);
 r_IIrA2 = r_IIrA1 + (T_ITA1 * r_A1_A1_r_A2);
 r_IIrA3 = r_IIrA2 + (T_ITA2 * r_A2_A2_r_A3);
 
-r_IIrB1 = r_IIrF + (T_ITF * r_FFrB1);
+r_IIrB1 = r_IIrF + (T_ITF * r_F_F_r_B1);
 r_IIrB2 = r_IIrB1 + (T_ITB1 * r_B1_B1_r_B2);
 r_IIrB3 = r_IIrB2 + (T_ITB2 * r_B2_B2_r_B3);
 
-r_IIrC1 = r_IIrF + (T_ITF * r_FFrC1);
+r_IIrC1 = r_IIrF + (T_ITF * r_F_F_r_C1);
 r_IIrC2 = r_IIrC1 + (T_ITC1 * r_C1_C1_r_C2);
 r_IIrC3 = r_IIrC2 + (T_ITC2 * r_C2_C2_r_C3);
 
-r_IIrD1 = r_IIrF + (T_ITF * r_FFrD1);
+r_IIrD1 = r_IIrF + (T_ITF * r_F_F_r_D1);
 r_IIrD2 = r_IIrD1 + (T_ITD1 * r_D1_D1_r_D2);
 r_IIrD3 = r_IIrD2 + (T_ITD2 * r_D2_D2_r_D3);
 
 
 
 % Transform STL coordinates into I frame
-dat.JF.vertsInI = r_IIrF + T_ITF*(dat.F.verts);
-dat.JA1.vertsInI = r_IIrA1 + T_ITA1*(dat.A1.verts);
-dat.JA2.vertsInI = r_IIrA2 + T_ITA2*(dat.A2.verts);
-dat.JA3.vertsInI = r_IIrA3 + T_ITA3*(dat.A3.verts);
-dat.JB1.vertsInI = r_IIrB1 + T_ITB1*(dat.B1.verts);
-dat.JB2.vertsInI = r_IIrB2 + T_ITB2*(dat.B2.verts);
-dat.JB3.vertsInI = r_IIrB3 + T_ITB3*(dat.B3.verts);
-dat.JC1.vertsInI = r_IIrC1 + T_ITC1*(dat.C1.verts);
-dat.JC2.vertsInI = r_IIrC2 + T_ITC2*(dat.C2.verts);
-dat.JC3.vertsInI = r_IIrC3 + T_ITC3*(dat.C3.verts);
-dat.JD1.vertsInI = r_IIrD1 + T_ITD1*(dat.D1.verts);
-dat.JD2.vertsInI = r_IIrD2 + T_ITD2*(dat.D2.verts);
-dat.JD3.vertsInI = r_IIrD3 + T_ITD3*(dat.D3.verts);
+dat.JF.vertsInI = r_IIrF + T_ITF*(dat.JF.verts)';
+dat.JA1.vertsInI = r_IIrA1 + T_ITA1*(dat.JA1.verts)';
+dat.JA2.vertsInI = r_IIrA2 + T_ITA2*(dat.JA2.verts)';
+dat.JA3.vertsInI = r_IIrA3 + T_ITA3*(dat.JA3.verts)';
+dat.JB1.vertsInI = r_IIrB1 + T_ITB1*(dat.JB1.verts)';
+dat.JB2.vertsInI = r_IIrB2 + T_ITB2*(dat.JB2.verts)';
+dat.JB3.vertsInI = r_IIrB3 + T_ITB3*(dat.JB3.verts)';
+dat.JC1.vertsInI = r_IIrC1 + T_ITC1*(dat.JC1.verts)';
+dat.JC2.vertsInI = r_IIrC2 + T_ITC2*(dat.JC2.verts)';
+dat.JC3.vertsInI = r_IIrC3 + T_ITC3*(dat.JC3.verts)';
+dat.JD1.vertsInI = r_IIrD1 + T_ITD1*(dat.JD1.verts)';
+dat.JD2.vertsInI = r_IIrD2 + T_ITD2*(dat.JD2.verts)';
+dat.JD3.vertsInI = r_IIrD3 + T_ITD3*(dat.JD3.verts)';
 
 
 
