@@ -1,0 +1,33 @@
+Important Links to get kinematic information from:
+Leg Segment
+Leg Segment Bottom (with the motor attached?)
+
+Calculate Torques on the axels
+
+Build the central plate/yoke mounts
+
+Add in bolts and whatnot? (are screws necessary in the CAD model?)
+
+ASSEMBLE
+
+Assign materials
+
+Get/calculate final weight!
+
+Add in an abstracted battery/electrical system perhaps. At least a spot for the system to go?'
+
+Count up all the purchased parts and screws, and decide which parts to 3d print and which to make out of aluminum.
+
+3D Print
+Yoke Plate?
+
+Aluminum
+Mounting Plate
+Interior Bracket
+Yoke
+Pin?
+
+Purchased Parts
+
+
+
