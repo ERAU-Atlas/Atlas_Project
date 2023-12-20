@@ -1,0 +1,4 @@
+{
+    "board": "arduino:sam:arduino_due_x",
+    "sketch": "src/Arduino/Single_Motor_Velocity_Control/Single_Motor_Velocity_Control.ino"
+}
