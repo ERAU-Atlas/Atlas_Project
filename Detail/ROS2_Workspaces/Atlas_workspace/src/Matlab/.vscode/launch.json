@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/ian/Library/CloudStorage/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/Matlab",
+      "program": "/Users/ian/Library/CloudStorage/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/Matlab/build/Debug/outDebug"
+    }
+  ]
+}

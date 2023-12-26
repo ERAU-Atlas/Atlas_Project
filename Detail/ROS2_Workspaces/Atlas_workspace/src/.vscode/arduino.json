@@ -1,0 +1,4 @@
+{
+    "sketch": "Arduino/single_Channel_PWM/single_Channel_PWM.ino",
+    "board": "arduino:sam:arduino_due_x"
+}
