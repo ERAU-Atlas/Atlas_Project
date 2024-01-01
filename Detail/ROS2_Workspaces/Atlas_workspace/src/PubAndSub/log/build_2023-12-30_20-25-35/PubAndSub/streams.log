@@ -1,0 +1,25 @@
+[0.022s] Invoking command in '/media/psf/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/PubAndSub/build/PubAndSub': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/psf/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/PubAndSub/build/PubAndSub -- -j2 -l2
+[0.052s] -- Found ament_cmake: 1.3.6 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.129s] -- Found ament_lint_auto: 0.12.9 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.154s] WARNING: Package name "PubAndSub" does not follow the naming conventions. It should start with a lower case letter and only contain lower case letters, digits, underscores, and dashes.
+[0.287s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.288s] -- Configured cppcheck include dirs: 
+[0.288s] -- Configured cppcheck exclude dirs and/or files: 
+[0.301s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.334s] -- Added test 'lint_cmake' to check CMake code style
+[0.352s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[0.471s] -- Added test 'uncrustify' to check C / C++ code style
+[0.472s] -- Configured uncrustify additional arguments: 
+[0.485s] -- Added test 'xmllint' to check XML markup files
+[0.490s] -- Configuring done
+[0.514s] -- Generating done
+[0.521s] -- Build files have been written to: /media/psf/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/PubAndSub/build/PubAndSub
+[0.545s] [ 50%] [32mBuilding CXX object CMakeFiles/pwm_publisher.dir/src/PWM_Publisher.cpp.o[0m
+[0.613s] [01m[K/media/psf/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/PubAndSub/src/PWM_Publisher.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: No such file or directory
+[0.613s]     4 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[0.613s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.614s] compilation terminated.
+[0.614s] gmake[2]: *** [CMakeFiles/pwm_publisher.dir/build.make:76: CMakeFiles/pwm_publisher.dir/src/PWM_Publisher.cpp.o] Error 1
+[0.614s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/pwm_publisher.dir/all] Error 2
+[0.614s] gmake: *** [Makefile:146: all] Error 2
+[0.616s] Invoked command in '/media/psf/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/PubAndSub/build/PubAndSub' returned '2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /media/psf/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/PubAndSub/build/PubAndSub -- -j2 -l2
