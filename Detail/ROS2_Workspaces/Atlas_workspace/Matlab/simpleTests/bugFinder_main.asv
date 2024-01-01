@@ -1,0 +1,26 @@
+
+
+%% Setup
+bugFinder = ros2node("bugFinder"); % main node
+
+
+bugNumPublisher = ros2publisher(bugFinder, "/bugs", "std_msgs/Int32"); % bug publisher
+bugIdentifier = ros2publisher(bugFinder, "/bugs", "std_msgs/Int32");
+
+bugFound = ros2subscriber(bugFinder, "/bugs", "std_msgs/Int32", @bugFinder_Callback);
+
+
+%% loop
+i = ros2message("std_msgs/Int32");
+i.data = 1;
+
+while(1)
+    i.data = i.data +1;
+    send(bugNumPublisher, i);
+
+    bugIdent = rand(1, 230);
+    send(bugIdentifier, bugIdent)
+
+
+    pause(1);
+end
