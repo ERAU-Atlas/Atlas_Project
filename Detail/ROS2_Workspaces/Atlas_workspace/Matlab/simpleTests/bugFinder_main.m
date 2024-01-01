@@ -1,28 +1,33 @@
-clear
-clc
+% Clear workspace and command window
+clear;
+clc;
 
-%% Setup
-setenv('ROS_DOMAIN_ID','10'); % set ros domain ID
+% Setup
+setenv('ROS_DOMAIN_ID','10'); % Set ROS domain ID
 
-bugFinder = ros2node("bugFinder"); % main node
+% Create main node
+bugFinder = ros2node("bugFinder");
 
-
-bugNumPublisher = ros2publisher(bugFinder, "/bugs", "std_msgs/Int32MultiArray"); % bug publisher
+% Create publishers
+bugNumPublisher = ros2publisher(bugFinder, "/bugs", "std_msgs/Int32MultiArray");
 bugIdentifier = ros2publisher(bugFinder, "/bugs", "std_msgs/Int32MultiArray");
 
+% Create subscriber
 bugFound = ros2subscriber(bugFinder, "/bugs", "std_msgs/Int32MultiArray", @bugFinder_Callback);
 
-
-%% loop
+% Initialize message
 i = ros2message("std_msgs/Int32MultiArray");
 i.data = int32([0, int32(randi([1, 200]))]);
 
-while(1)
+% Main loop
+while true
+    % Increment bug count and generate new bug identifier
     i.data(1) = i.data(1) + 1;
     i.data(2) = int32(randi([1, 200]));
+
+    % Publish message
     send(bugNumPublisher, i);
 
-
-
+    % Pause for 1 second
     pause(1);
 end
