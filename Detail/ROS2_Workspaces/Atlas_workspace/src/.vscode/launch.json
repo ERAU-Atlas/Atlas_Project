@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/ian/Library/CloudStorage/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/Arduino/single_Channel_PWM",
-      "program": "/Users/ian/Library/CloudStorage/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/Arduino/single_Channel_PWM/build/Debug/outDebug"
+      "cwd": "/Users/ian/Library/CloudStorage/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/cpp",
+      "program": "/Users/ian/Library/CloudStorage/OneDrive-Embry-RiddleAeronauticalUniversity/School/ME407 - Capstone Prelim/Atlas_Project/Detail/ROS2_Workspaces/Atlas_workspace/src/cpp/build/Debug/outDebug"
     }
   ]
 }
