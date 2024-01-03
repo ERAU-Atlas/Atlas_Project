@@ -3,7 +3,7 @@ clear;
 clc;
 
 % Setup
-setenv('ROS_DOMAIN_ID','10'); % Set ROS domain ID
+
 
 % Create main node
 bugFinder = ros2node("bugFinder");
